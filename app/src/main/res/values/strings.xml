@@ -2,6 +2,7 @@
     <string name="app_name">COVID-19 Information</string>
     <string name="username">Username</string>
     <string name="password">Password</string>
+    <string name="new_password">New Password</string>
     <string name="login">Login</string>
     <string name="don_t_have_an_account_register_here">Don\'t have an account? Register Here</string>
     <string name="nama_lengkap">Nama Lengkap</string>

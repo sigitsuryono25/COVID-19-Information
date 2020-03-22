@@ -19,6 +19,7 @@
             android:id="@+id/namaLengkap"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:gravity="center_vertical"
             android:drawableStart="@drawable/ic_person"
             android:drawablePadding="10dp"
             android:padding="8dp" />
@@ -26,6 +27,7 @@
         <TextView
             android:id="@+id/username"
             android:layout_width="match_parent"
+            android:gravity="center_vertical"
             android:layout_height="wrap_content"
             android:drawableStart="@drawable/ic_email"
             android:drawablePadding="10dp"

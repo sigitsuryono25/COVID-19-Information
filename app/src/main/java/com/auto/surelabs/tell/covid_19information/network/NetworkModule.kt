@@ -1,13 +1,11 @@
 package com.auto.surelabs.tell.covid_19information.network
 
-import com.auto.surelabs.tell.covid_19information.model.login.Data
 import com.auto.surelabs.tell.covid_19information.model.login.ResponseLogin
 import com.auto.surelabs.tell.covid_19information.model.registrasi.ResponseRegistrasi
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import retrofit2.http.Body
 import retrofit2.http.Field
 import retrofit2.http.FormUrlEncoded
 import retrofit2.http.POST
@@ -60,7 +58,11 @@ class NetworkModule {
 
         @FormUrlEncoded
         @POST("update_profile")
-        fun doUpdateAccount(@Body item: Data): retrofit2.Call<ResponseRegistrasi>
+        fun doUpdateAccount(
+            @Field("username") username: String?,
+            @Field("password") password: String?,
+            @Field("nama") nama: String?
+        ): retrofit2.Call<ResponseRegistrasi>
 
     }
 

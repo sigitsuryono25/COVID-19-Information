@@ -9,7 +9,6 @@ import android.widget.LinearLayout
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
-import com.auto.surelabs.tell.covid_19information.model.login.Data
 import com.auto.surelabs.tell.covid_19information.model.login.ResponseLogin
 import com.auto.surelabs.tell.covid_19information.model.registrasi.ResponseRegistrasi
 import com.auto.surelabs.tell.covid_19information.network.NetworkModule
@@ -78,14 +77,13 @@ class EditProfileActivity : AppCompatActivity() {
                 .setView(viewAlertDialog)
                 .setPositiveButton("Okay") { _, _ ->
                     if (editTextPassword.text.toString().isNotEmpty()) {
-                        val data = Data(
+
+                        //doUpdate
+                        NetworkModule().getServices().doUpdateAccount(
                             username = username.text.toString(),
                             password = password.text.toString(),
                             nama = namaLengkap.text.toString()
                         )
-
-                        //doUpdate
-                        NetworkModule().getServices().doUpdateAccount(data)
                             .enqueue(object : retrofit2.Callback<ResponseRegistrasi> {
                                 override fun onFailure(
                                     call: Call<ResponseRegistrasi>,
